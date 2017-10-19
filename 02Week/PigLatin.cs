@@ -5,7 +5,7 @@ public class Program
     public static void Main()
     {
         Console.WriteLine("What's the word?");
-        string word = Console.ReadLine();
+        string word = Console.ReadLine().ToLower();
         Console.WriteLine(TranslateWord(word));
         Console.ReadLine();
     }
@@ -68,15 +68,11 @@ public class Program
             indexOfFirstVowel = word.IndexOf('y');
         }
 
+        if (indexOfFirstVowel == 0) { return word + "yay"; }
+
         string RestOfWord = word.Substring(indexOfFirstVowel);
         string FirstPart = word.Substring(0, indexOfFirstVowel);
+
         
-        //3 - Words that begin with a vowel should just add on 'yay' to the end
-        //indexOfFirstVowel == 0
-
-        //4 - Must be lowercase
-
-        return RestOfWord + FirstPart + "ay";
-
     }
 }
