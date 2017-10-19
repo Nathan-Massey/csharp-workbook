@@ -9,7 +9,7 @@ public class Program
         Console.WriteLine(TranslateWord(word));
         Console.ReadLine();
     }
-    
+
     public static string TranslateWord(string word)
     {
         //1 - Translate simple word
@@ -69,10 +69,15 @@ public class Program
         }
 
         if (indexOfFirstVowel == 0) { return word + "yay"; }
-
+        else
+        {
         string RestOfWord = word.Substring(indexOfFirstVowel);
         string FirstPart = word.Substring(0, indexOfFirstVowel);
+           
+            return RestOfWord + FirstPart + "ay";
+        }
 
-        
+
+
     }
 }
