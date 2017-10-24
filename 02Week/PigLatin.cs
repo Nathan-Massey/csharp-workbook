@@ -74,10 +74,42 @@ public class Program
         string RestOfWord = word.Substring(indexOfFirstVowel);
         string FirstPart = word.Substring(0, indexOfFirstVowel);
            
-            return RestOfWord + FirstPart + "ay";
+        return RestOfWord + FirstPart + "ay";
         }
 
 
 
     }
 }
+
+
+
+     //public class Program
+     //{
+     //  public static void main()
+     //{
+     //  string[] myArray = new string[2];
+     //
+     //  myArray[0] = "Nathan";
+     //  myArray[1] = "Massey";
+     //  
+     //  for(var i = 0; i < myArray.length; i++)
+     //  {
+     //      Console.WriteLine(myArray[i]);
+     //  }
+     //
+     //  int[,] myNumberArray = new int[1, 2];
+     //
+     //  myNumberArray[0, 0] = 2345;
+     //  myNumberArray[0, 1] = 6789;
+     //
+     //  for(var x = 0, x < myNumberArray.length; x++)
+     //  Console.ReadLine();
+     //} 
+     //}
+
+
+     //      List<string> myList = new List<string>();
+     //
+     //      myList.Add("Nathan");
+     //      myList.Add("Massey");
