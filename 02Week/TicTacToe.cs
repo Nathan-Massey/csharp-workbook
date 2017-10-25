@@ -17,7 +17,7 @@ public class Program
             DrawBoard();
             GetInput();
         }
-        while (!CheckForWin());
+        while (!CheckForWin() || CheckForTie());
 
         Console.ReadLine();
     }
@@ -125,9 +125,16 @@ public class Program
     {
         bool tied = false;
 
-        if(board[0][0] != " ")
+        if (board[0][0] != " " && board[0][1] != " " && board[0][2] != " " &&
+            board[1][0] != " " && board[1][1] != " " && board[2][1] != " " &&
+            board[2][0] != " " && board[2][1] != " " && board[2][2] != " " )
         {
             tied = true;
+        }
+
+        if (tied)
+        {
+            Console.WriteLine("Tie game.");
         }
 
         return tied;

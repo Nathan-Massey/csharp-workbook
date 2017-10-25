@@ -1,0 +1,7 @@
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\bin\Debug\CSharpProject.exe.config
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\bin\Debug\CSharpProject.exe
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\bin\Debug\CSharpProject.pdb
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\obj\Debug\CSharpProject.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\obj\Debug\CSharpProject.csproj.CoreCompileInputs.cache
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\obj\Debug\CSharpProject.exe
+C:\Users\Nathan\Documents\Workbook\csharp-workbook\CSharpProject\CSharpProject\obj\Debug\CSharpProject.pdb
