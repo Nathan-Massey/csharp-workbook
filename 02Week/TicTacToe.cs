@@ -130,10 +130,6 @@ public class Program
             board[2][0] != " " && board[2][1] != " " && board[2][2] != " " )
         {
             tied = true;
-        }
-
-        if (tied)
-        {
             Console.WriteLine("Tie game.");
         }
 
