@@ -47,7 +47,7 @@ public class Program
         }
         return false;
     }
-    
+
     public static string GenerateHint(char[] guess)
     {
         // Clone solution
@@ -70,42 +70,28 @@ public class Program
 
         int correctLetters = 0;
 
-        for (var i = 0; i < clonedSolution.Length; i++)
+        for (var i = 0; i < 4; i++)
         {
-            // Check if any letter inside the guess is found in the solution (cloned)
-            char character = guess[i];
             string clonedSolutionString = String.Join("", clonedSolution);
 
-            clonedSolutionString.IndexOf(character);
-            // What value index gets when there is NO match
-            char wrongCharacter =! guess[i];
-            string clonedWrongString = String.Join("0", clonedWrongString);
+            // Check if any letter inside the guess is found in the solution (cloned)
+            int indexTarget = clonedSolutionString.IndexOf(guess[i]);
 
 
-            // What value index gets when there IS a match
-            char correctCharacter = guess[i];
-            string clonedCorrectString = String.Join("1", clonedCorrectSolution);
-
+            // What value indexTarget gets when there is NO match = -1
+            // What value indexTarget gets when there IS a match < -1
             // If you found the character - if(index ?)
-            if(index correctCharacter);
-                 {
-                 // Increase correctLetter
-                 correctLetter++;
-                 // Remove the character from conedSolution
-                 string.Remove conedSolution[i];
-                 }
+            if (indexTarget > -1) //here we found a match
+            {
+                correctLetters++;
+                clonedSolution[i] = ' ';
+            }
         }
-       
-        // Return the hint
-    public static void ReturnHint(char[] guess)
-    {
-        // Combination of the correctLetterLocation and correctLetter
-        for (var correctLetterLocation = clonedSolution)
-        {
-            // Hyphenated -  
-            return Console.WriteLine(guess[i]++, "-", guess[i]++);
-        }
+
+
+        return $"{correctLetterLocation}-{correctLetters}";
     }
+       
     
     public static void InsertCode(char[] guess)
     {
