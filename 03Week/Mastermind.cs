@@ -28,24 +28,87 @@ public class Program
         char[] guess = new char[4];
         Console.WriteLine("Enter Guess:");
         guess = Console.ReadLine().ToCharArray();
-        return;
+        return;        
     }
     
     public static bool CheckSolution(char[] guess)
     {
-        // Your code here
+        // Birng together into a single string
+
+        // Guess
+        string guessString = String.Join("", guess);
+
+        // Solution
+        string solutionString = String.Join(string.Empty, solution);
+
+        if (guess == solution)
+        {
+            return true;
+        }
         return false;
     }
     
     public static string GenerateHint(char[] guess)
     {
-        // Your code here
-        return " ";
+        // Clone solution
+        char[] clonedSolution = (char[])solution.Clone();
+
+        // Determine correct "letter-locations"
+        int correctLetterLocation = 0;
+
+        // Interate over cloneSolution
+        for (var i = 0; i < clonedSolution.Length; i++)
+        {
+            // Compare cloneSolution against guess
+            // For each index
+            if (clonedSolution[i] == guess[i])
+            {
+                correctLetterLocation++;
+                clonedSolution[i] = ' ';
+            }
+        }
+
+        int correctLetters = 0;
+
+        for (var i = 0; i < clonedSolution.Length; i++)
+        {
+            // Check if any letter inside the guess is found in the solution (cloned)
+            char character = guess[i];
+            string clonedSolutionString = String.Join("", clonedSolution);
+
+            clonedSolutionString.IndexOf(character);
+            // What value index gets when there is NO match
+            char wrongCharacter =! guess[i];
+            string clonedWrongString = String.Join("0", clonedWrongString);
+
+
+            // What value index gets when there IS a match
+            char correctCharacter = guess[i];
+            string clonedCorrectString = String.Join("1", clonedCorrectSolution);
+
+            // If you found the character - if(index ?)
+            if(index correctCharacter);
+                 {
+                 // Increase correctLetter
+                 correctLetter++;
+                 // Remove the character from conedSolution
+                 string.Remove conedSolution[i];
+                 }
+        }
+       
+        // Return the hint
+    public static void ReturnHint(char[] guess)
+    {
+        // Combination of the correctLetterLocation and correctLetter
+        for (var correctLetterLocation = clonedSolution)
+        {
+            // Hyphenated -  
+            return Console.WriteLine(guess[i]++, "-", guess[i]++);
+        }
     }
     
     public static void InsertCode(char[] guess)
     {
-        // Your code here
         return;
     }
     
