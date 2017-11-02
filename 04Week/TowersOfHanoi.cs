@@ -17,6 +17,7 @@ public class Program
         // Think when the loop will end
         // Think of what methods calls go inside the code block
 
+
         do
         {
             PrintStacks();
@@ -24,23 +25,35 @@ public class Program
             Console.WriteLine("Enter pillar to move.");
 
             // Capture that input
-            Console.ReadLine();
+            var start = Console.ReadLine();
 
             // Ask for finish input
             Console.WriteLine("Enter pillar to land.");
 
             // Capture that input
-            Console.ReadLine();
+            var finish = Console.ReadLine();
 
             // Check if the move is legal
-            IsLegal();
+            IsLegal(start, finish);
 
             // We only make a move if the move was legal
-            MovePiece();
+            MovePiece(start, finish);
+
         }
         while (!CheckForWin());
 
         Console.ReadLine();
+
+    }
+
+    public static string ParseInputForStart(string input)
+    {
+        return string.Empty;
+    }
+
+    public static string ParseInputForFinish(string input)
+    {
+        return string.Empty;
     }
 
     public static bool CheckForWin()
@@ -56,7 +69,7 @@ public class Program
         return false;
     }
     
-    public static void MovePiece(string start, string finish)
+    public static void MovePiece (string start, string finish)
     {
         // 1 - Move a piece
         // Start will tell me which dictionary to grab
