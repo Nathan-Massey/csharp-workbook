@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Program
 {
@@ -12,28 +13,85 @@ public class Program
     
     public static void Main()
     {
-        printStacks();
-        // Your code here
+        // Loop through the methods using do {...} while()
+        // Think when the loop will end
+        // Think of what methods calls go inside the code block
+
+        do
+        {
+            PrintStacks();
+            // Ask for start input
+            Console.WriteLine("Enter pillar to move.");
+
+            // Capture that input
+            Console.ReadLine();
+
+            // Ask for finish input
+            Console.WriteLine("Enter pillar to land.");
+
+            // Capture that input
+            Console.ReadLine();
+
+            // Check if the move is legal
+            IsLegal();
+
+            // We only make a move if the move was legal
+            MovePiece();
+        }
+        while (!CheckForWin());
+
+        Console.ReadLine();
     }
-    
-    public static bool GameOver()
+
+    public static bool CheckForWin()
     {
-        // Your code here;
+        // 3 - Check for win
+
+        // We need to count the elements on
+        // the "c" pillar
+
+        if (stacks["c"].Count == 4)
+            return true;
+
         return false;
     }
     
-    public static void movePiece(string start, string finish)
+    public static void MovePiece(string start, string finish)
     {
-        // Your code here
+        // 1 - Move a piece
+        // Start will tell me which dictionary to grab
+        // I know that the list has to return the top value
+
+        int lastElement = stacks[start].Last();
+
+        // Add lastElement into the finish pillar
+
+        stacks[finish].Add(lastElement);
+
+        // Remove it from start pillar
+
+        stacks[start].Remove(lastElement);
+
     }
     
-    public static bool isLegal(string start, string finish)
+    public static bool IsLegal(string start, string finish)
     {
-        // Your code here
+        // 2 - Check for legal move
+        // Check for empty pillar - finish (List)
+        if (stacks[finish].Count == 0)
+            return true;
+
+        // Check for existing values on both pillars
+        int lastNumberFromStart = stacks[start].Last();
+        int lastNumberFromFinish = stacks[finish].Last();
+
+        if (lastNumberFromStart < lastNumberFromFinish)
+            return true;
+
         return false;
     }
     
-    public static void printStacks ()
+    public static void PrintStacks ()
     {
         string[] letters = new string[] {"a", "b", "c"};
         for( var i = 0; i < letters.Length; i++ )
