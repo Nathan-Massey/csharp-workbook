@@ -86,7 +86,7 @@ public class Program
         stacks[start].Remove(lastElement);
 
     }
-    
+
     public static bool IsLegal(string start, string finish)
     {
         // 2 - Check for legal move
