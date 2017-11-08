@@ -91,63 +91,55 @@ public static class Program
 
     private static void RandomNumberGuess()
     {
-        Console.WriteLine("Guess a number between 1 and 10: ");
-
-        string input = Console.ReadLine();
-
-        int number = int.Parse(input);
+    
 
         Random random = new Random();
 
-        int randomNumber = random.Next(0, 10);
+        int randomNumber = random.Next(1, 11);
 
-        for (var i = number; number != randomNumber; /*Repeate 4 times */ ) ;
+        var numberOfGuesses = 1;
+        bool hasPlayerGuessedIt = false;
+
+        while (numberOfGuesses <= 4 && !hasPlayerGuessedIt)
         {
+            Console.WriteLine("Guess a number between 1 and 10: ");
 
-            if (input = randomNumber)
+            string input = Console.ReadLine();
+
+            int number = int.Parse(input);
+
+            if (number == randomNumber)
             {
                 Console.WriteLine("You won!");
+                hasPlayerGuessedIt = true;
             }
             else
             {
-                Console.WriteLine("You lost!");
+                numberOfGuesses++;
             }
         }
+
+        if  (numberOfGuesses == 5)
+        {
+            Console.WriteLine("You lost!");
+        }
+
     }
 
     private static void CountTheNumbers()
     {
-        Console.WriteLine("Enter numbers seperated by a comma:");
+        Console.WriteLine("Enter numbers seperated by a comma: ");
 
+        var input = Console.ReadLine(); // "2, 4, 6, 1, 22"
+
+        string[] stringNumbers = input.Split(',');
+
+        for (var i = 0; i <= stringNumbers.Length; i++)
         {
-            bool ContinueAsking = true;
-
-            while (ContinueAsking)
-            {
-                string input = Console.ReadLine();
-
-                int toNumber;
-
-                bool WasANumber = int.TryParse(input, out toNumber);
-
-                if (WasANumber == true)
-                {
-                    Math.Max(toNumber);
-
-                    ContinueAsking = true;
-                }
-
-                if (input == "ok")
-                {
-                    ContinueAsking = false;
-                }
-
-            }
-
-            Console.WriteLine("The highest number found was " + Math.Max(input);
-
+            Console.ReadLine(Math.Max(input));
         }
 
+        Console.WriteLine("The highest number found was " + Math.Max(input);
 
     }
 }
